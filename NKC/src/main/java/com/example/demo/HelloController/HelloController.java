@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 
-	@GetMapping("hello")
+	@GetMapping("hello") //Static Page  방식 == 그냥 HTML 파일을 View 로 보여준다 
 	public String Hello(Model model) {
 
 		model.addAttribute("data", "FFF");
@@ -17,7 +17,8 @@ public class HelloController {
 		return "hello";
 	}
 
-	@GetMapping("hello-mvc")
+	
+	@GetMapping("hello-mvc") // dynamic web 방식  
 	public String helloMvc(@RequestParam("name") String name, Model model) {
 		model.addAttribute("name", name);
 		return "hello-template";
@@ -31,7 +32,7 @@ public class HelloController {
 	}
 
 	@GetMapping("hello-api")
-//	@ResponseBody 리턴 방식은 기본 JSON 방식 
+//	@ResponseBody 리턴 방식은 기본 JSON 방식
 	@ResponseBody // html 에서 Json 방식 형태로 표현 되는 형식
 	public Hello helloApi(@RequestParam("name") String name) {
 
