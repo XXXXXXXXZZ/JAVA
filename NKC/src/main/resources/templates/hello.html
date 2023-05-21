@@ -1,13 +1,14 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
+
 <meta charset="UTF-8">
 <title>Insert title here</title>
 </head>
 <body>
-<a href="hello">go hello!!</a>
 
-<a href="hello-mvc">go hello!2!</a>
-ssss
+
+<p th:text="' ' +${data}"></p>
+
 </body>
 </html>
